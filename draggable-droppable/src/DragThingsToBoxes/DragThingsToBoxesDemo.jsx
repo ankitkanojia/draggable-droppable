@@ -1,6 +1,6 @@
 import React from 'react';
 //import Boxable from './Boxable';
-//import Box from './Box';
+import Box from './Box';
 import './DragThingsToBoxesDemo.css';
 
 
@@ -18,10 +18,10 @@ export default class DragThingsToBoxesDemo extends React.Component {
           <Boxable targetKey="box" label="gorilla" image="img/gorilla.png"/>
           <Boxable targetKey="box" label="puppy" image="img/puppy.png"/>
         </div> */}
-        {/* <div className="boxes">
+        <div className="boxes">
           <Box targetKey="box"/>
           <Box targetKey="box"/>
-        </div> */}
+        </div>
         <div style={{clear: 'both'}}>&nbsp;</div>
 
         <h3>Notes:</h3>

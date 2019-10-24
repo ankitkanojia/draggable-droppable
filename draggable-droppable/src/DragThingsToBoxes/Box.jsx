@@ -1,7 +1,7 @@
 import React from 'react';
-var shortid = require('shortid');
 import DropTarget from './../DropTarget';
 import BoxItem from './BoxItem';
+var shortid = require('shortid');
 
 export default class Box extends React.Component {
     constructor(props) {
