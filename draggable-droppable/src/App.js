@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 // import DragThingsToBoxesDemo from './DragThingsToBoxes/DragThingsToBoxesDemo';
 import BasicDragDemo from './BasicDragDemo';
+import DragFoodToAnimalsDemo from './DragFoodToAnimals/DragFoodToAnimalsDemo';
 
 function App() {
   return (
     <div className="App">
+      <DragFoodToAnimalsDemo/>
+				<hr />
       <BasicDragDemo />
     </div>
   );
