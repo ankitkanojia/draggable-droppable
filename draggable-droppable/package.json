@@ -6,7 +6,8 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-drag-drop-container": "^6.1.1",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "shortid": "^2.2.12"
   },
   "scripts": {
     "start": "react-scripts start",

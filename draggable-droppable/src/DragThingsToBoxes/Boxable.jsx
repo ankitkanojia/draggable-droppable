@@ -1,6 +1,6 @@
 import React from 'react';
-var shortid = require('shortid');
 import DragDropContainer  from './../DragDropContainer';
+var shortid = require('shortid');
 
 /*
     Boxable -- a thing you can drag into a Box
