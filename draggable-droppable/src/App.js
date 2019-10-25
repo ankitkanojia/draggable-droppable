@@ -8,12 +8,12 @@ function App() {
   return (
     <div className="App">
       <DragThingsToBoxesDemo/>
-				<hr />
+				{/* <hr />
       <DragFoodToAnimalsDemo/>
 				<hr />
       <BasicDragDemo />
       <hr />
-				<DragElementWithClickHandlers />
+				<DragElementWithClickHandlers /> */}
     </div>
   );
 }
