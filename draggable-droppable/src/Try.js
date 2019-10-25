@@ -4,18 +4,18 @@ import BasicDragDemo from './BasicDragDemo';
 import DragFoodToAnimalsDemo from './DragFoodToAnimals/DragFoodToAnimalsDemo';
 import DragElementWithClickHandlers from './DragElementWithClickHandlers';
 
-function App() {
+function Try() {
   return (
     <div className="App">
-      <DragThingsToBoxesDemo />
-      <hr />
-      <DragFoodToAnimalsDemo />
-      <hr />
+      <DragThingsToBoxesDemo/>
+				{/* <hr />
+      <DragFoodToAnimalsDemo/>
+				<hr />
       <BasicDragDemo />
       <hr />
-      <DragElementWithClickHandlers />
+				<DragElementWithClickHandlers /> */}
     </div>
   );
 }
 
-export default App;
+export default Try;
