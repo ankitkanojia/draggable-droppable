@@ -234,10 +234,12 @@ class DragDropContainer extends React.Component {
 
   // Drop
   handleMouseUp = (e) => {
+    console.log('drag leave enent');
     this.setState({ clicked: false });
     if (this.state.dragging) {
       document.removeEventListener('mousemove', this.handleMouseMove);
       document.removeEventListener('mouseup', this.handleMouseUp);
+      //This will reset the position of draggable object
       this.drop(e.clientX, e.clientY);
       window.getSelection().removeAllRanges(); // prevent weird-looking highlights
     }
