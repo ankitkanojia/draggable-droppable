@@ -11,20 +11,20 @@ class App extends React.Component {
 
 
   componentDidMount(){
-    console.log(this.refs["leftDiv"].getBoundingClientRect().bottom);
+    //console.log(this.refs["leftDiv"].getBoundingClientRect());
     this.setState({
       leftWidth : this.refs["leftDiv"].getBoundingClientRect().width + this.refs["leftDiv"].getBoundingClientRect().x
     });
   }
 
   handleStop = (index) => {
-    // const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
-    // if(imagewidh < this.state.leftWidth)
-    // {
-    //   console.log("inside");
-    // }else{
-    //   console.log("outside");
-    // }
+    const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
+    if(imagewidh < this.state.leftWidth)
+    {
+      console.log("inside");
+    }else{
+      console.log("outside");
+    }
   }
 
   render() {
