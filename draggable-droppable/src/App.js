@@ -15,8 +15,8 @@ class App extends React.Component {
     });
   }
 
-  handleStop = (e, data) => {
-    const imagewidh = this.refs["firstImg"].getBoundingClientRect().width + this.refs["firstImg"].getBoundingClientRect().x;
+  handleStop = (index) => {
+    const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
     if(imagewidh < this.state.leftWidth)
     {
       console.log("inside");
@@ -29,9 +29,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="leftDiv" ref={"leftDiv"}>
-          <Draggable onStop={this.handleStop}><img ref={"firstImg"} height="100" src={require("./img/gorilla.png")} /></Draggable>
-          <Draggable onStop={this.handleStop}><img ref={"firstImg"} height="100" src={require("./img/panda.jpg")} /></Draggable>
-          <Draggable onStop={this.handleStop}><img ref={"firstImg"} height="100" src={require("./img/puppy.png")} /></Draggable>
+          <Draggable onStop={() => this.handleStop(1)}><img ref={"img_1"} height="100" src={require("./img/gorilla.png")} /></Draggable>
+          <Draggable onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
+          <Draggable onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
         <div className="rightDiv">
           <Draggable><img height="100" src={require("./img/gorilla.png")} /></Draggable>
