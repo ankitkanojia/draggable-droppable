@@ -11,6 +11,7 @@ class App extends React.Component {
 
 
   componentDidMount(){
+    console.log(this.refs["leftDiv"].getBoundingClientRect().bottom);
     this.setState({
       leftWidth : this.refs["leftDiv"].getBoundingClientRect().width + this.refs["leftDiv"].getBoundingClientRect().x
     });
@@ -30,8 +31,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="leftDiv" ref={"leftDiv"}>
-          <Draggable bounds={this.state.controlledPosition} onStop={() => this.handleStop(1)}><img ref={"img_1"} height="100" src={require("./img/gorilla.png")} /></Draggable>
-          <Draggable position={this.state.controlledPosition} onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
+          <Draggable bounds={{ left : 8, top : 8, right : 480, bottom : 175.60000610351562 }} onStop={() => this.handleStop(1)}><img ref={"img_1"} height="100" src={require("./img/gorilla.png")} /></Draggable>
+          <Draggable onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
           <Draggable onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
         <div className="rightDiv">
