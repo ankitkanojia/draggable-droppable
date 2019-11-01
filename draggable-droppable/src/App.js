@@ -6,7 +6,11 @@ class App extends React.Component {
 
   state = {
     leftWidth : 0,
-    controlledPosition: { left : 100, top : 0, right : 480, bottom : 175.60000610351562 }
+    controlledPosition: [
+      { left : -35, top : -35, right : 550, bottom : 43 },
+      { left : -135, top : -35, right : 450, bottom : 43 },
+      { left : -235, top : -35, right : 350, bottom : 43 }
+    ]
   }
 
 
@@ -31,9 +35,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="leftDiv" ref={"leftDiv"}>
-          <Draggable bounds={{ left : -35, top : -35, right : 550, bottom : 43 }} onStop={() => this.handleStop(1)}><img ref={"img_1"} height="100" src={require("./img/gorilla.png")} /></Draggable>
-          <Draggable onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
-          <Draggable onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
+          <Draggable bounds={this.state.controlledPosition[0]} onStop={() => this.handleStop(1)}><img ref={"img_1"} height="100" src={require("./img/gorilla.png")} /></Draggable>
+          <Draggable bounds={this.state.controlledPosition[1]} onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
+          <Draggable bounds={this.state.controlledPosition[2]} onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
         <div className="rightDiv">
           <Draggable><img height="100" src={require("./img/gorilla.png")} /></Draggable>
