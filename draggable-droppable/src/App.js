@@ -7,14 +7,14 @@ class App extends React.Component {
   state = {
     leftWidth : 0,
     controlledLeftPosition: [
-      { left : -35, top : -35, right : 550, bottom : 43 },
-      { left : -135, top : -35, right : 450, bottom : 43 },
-      { left : -235, top : -35, right : 350, bottom : 43 }
+      { left : -32, top : -32, right : 550, bottom : 36 },
+      { left : -132, top : -32, right : 450, bottom : 36 },
+      { left : -232, top : -32, right : 350, bottom : 36 }
     ],
     controlledRightPosition: [
-      { left : -35, top : -35, right : 550, bottom : 43 },
-      { left : -135, top : -35, right : 450, bottom : 43 },
-      { left : -235, top : -35, right : 350, bottom : 43 }
+      { left : -32, top : -32, right : 550, bottom : 36 },
+      { left : -132, top : -32, right : 450, bottom : 36 },
+      { left : -232, top : -32, right : 350, bottom : 36 }
     ]
   }
 
