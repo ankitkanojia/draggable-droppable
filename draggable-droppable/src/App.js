@@ -29,14 +29,26 @@ class App extends React.Component {
 
   handleStop = (index) => {
     const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
-    let updatedArray = this.state.controlledLeftPosition;
-    if (imagewidh < this.state.leftWidth) {
-      updatedArray[index - 1].position = "left";
-    } else {
-      updatedArray[index - 1].position = "right";
+    let updatedArrayLeft = this.state.controlledLeftPosition;
+    let updatedArrayRight = this.state.controlledRightPosition;
+    if(index > 3)
+    {
+      if (imagewidh < this.state.leftWidth) {
+        updatedArrayRight[index - 3].position = "left";
+      } else {
+        updatedArrayRight[index - 3].position = "right";
+      }
+    }else{
+      if (imagewidh < this.state.leftWidth) {
+        updatedArrayLeft[index - 1].position = "left";
+      } else {
+        updatedArrayLeft[index - 1].position = "right";
+      }
     }
+    
     this.setState({
-      controlledLeftPosition :  [...updatedArray]
+      controlledLeftPosition :  [...updatedArrayLeft],
+      controlledRightPosition : [...updatedArrayRight]
     });      
   }
 
