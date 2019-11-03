@@ -29,11 +29,15 @@ class App extends React.Component {
 
   handleStop = (index) => {
     const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
+    let updatedArray = this.state.controlledLeftPosition;
     if (imagewidh < this.state.leftWidth) {
-      console.log("inside");
+      updatedArray[index - 1].position = "left";
     } else {
-      console.log("outside");
+      updatedArray[index - 1].position = "right";
     }
+    this.setState({
+      controlledLeftPosition :  [...updatedArray]
+    });      
   }
 
   render() {
@@ -45,14 +49,10 @@ class App extends React.Component {
           <Draggable bounds={this.state.controlledLeftPosition[2]} onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
         <div className="rightDiv" ref={"rightDiv"}>
-          <Draggable bounds={this.state.controlledRightPosition[0]}><img height="100" src={require("./img/gorilla.png")} /></Draggable>
-          <Draggable bounds={this.state.controlledRightPosition[1]}><img height="100" src={require("./img/panda.jpg")} /></Draggable>
-          <Draggable bounds={this.state.controlledRightPosition[2]}><img height="100" src={require("./img/puppy.png")} /></Draggable>
+          <Draggable bounds={this.state.controlledRightPosition[0]} onStop={() => this.handleStop(4)}><img ref={"img_4"} height="100" src={require("./img/gorilla.png")} /></Draggable>
+          <Draggable bounds={this.state.controlledRightPosition[1]} onStop={() => this.handleStop(5)}><img ref={"img_5"} height="100" src={require("./img/panda.jpg")} /></Draggable>
+          <Draggable bounds={this.state.controlledRightPosition[2]} onStop={() => this.handleStop(6)}><img ref={"img_6"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
         <ul style={{marginTop : 200}}>
           {this.state.controlledLeftPosition.map((data, index) => {
