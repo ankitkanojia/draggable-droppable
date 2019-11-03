@@ -20,36 +20,36 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    console.log(this.refs["leftDiv"].getBoundingClientRect());
-    console.log(this.refs["rightDiv"].getBoundingClientRect());
-    // this.setState({
-    //   leftWidth : this.refs["leftDiv"].getBoundingClientRect().width + this.refs["leftDiv"].getBoundingClientRect().x
-    // });
+    //console.log(this.refs["leftDiv"].getBoundingClientRect());
+    //console.log(this.refs["rightDiv"].getBoundingClientRect());
+    this.setState({
+      leftWidth: this.refs["leftDiv"].getBoundingClientRect().width + this.refs["leftDiv"].getBoundingClientRect().x,
+      rightWidth: this.refs["rightDiv"].getBoundingClientRect().left
+    });
   }
 
   handleStop = (index) => {
     const imagewidh = this.refs["img_" + index].getBoundingClientRect().width + this.refs["img_" + index].getBoundingClientRect().x;
     let updatedArrayLeft = this.state.controlledLeftPosition;
     let updatedArrayRight = this.state.controlledRightPosition;
-    if(index > 3)
-    {
+    if (index > 3) {
       if (imagewidh < this.state.leftWidth) {
         updatedArrayRight[index - 3].position = "left";
       } else {
         updatedArrayRight[index - 3].position = "right";
       }
-    }else{
+    } else {
       if (imagewidh < this.state.leftWidth) {
         updatedArrayLeft[index - 1].position = "left";
       } else {
         updatedArrayLeft[index - 1].position = "right";
       }
     }
-    
+
     this.setState({
-      controlledLeftPosition :  [...updatedArrayLeft],
-      controlledRightPosition : [...updatedArrayRight]
-    });      
+      controlledLeftPosition: [...updatedArrayLeft],
+      controlledRightPosition: [...updatedArrayRight]
+    });
   }
 
   render() {
@@ -66,7 +66,7 @@ class App extends React.Component {
           <Draggable bounds={this.state.controlledRightPosition[2]} onStop={() => this.handleStop(6)}><img ref={"img_6"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
         <br />
-        <ul style={{marginTop : 200}}>
+        <ul style={{ marginTop: 200 }}>
           {this.state.controlledLeftPosition.map((data, index) => {
             return <li key={index + 1}>{index + 1} {data.position}</li>
           })}
@@ -74,7 +74,7 @@ class App extends React.Component {
         <br />
         <ul>
           {this.state.controlledRightPosition.map((data, index) => {
-            return <li key={index + 1}>{index + 1} {data.position}</li>
+            return <li key={index + 1}>{index + 4} {data.position}</li>
           })}
         </ul>
       </div>
