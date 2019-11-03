@@ -7,20 +7,21 @@ class App extends React.Component {
   state = {
     leftWidth : 0,
     controlledLeftPosition: [
-      { left : -32, top : -32, right : 550, bottom : 36 },
-      { left : -132, top : -32, right : 450, bottom : 36 },
-      { left : -232, top : -32, right : 350, bottom : 36 }
+      { left : -32, top : -32, right : 1388, bottom : 36 },
+      { left : -132, top : -32, right : 1288, bottom : 36 },
+      { left : -232, top : -32, right : 1188, bottom : 36 }
     ],
     controlledRightPosition: [
-      { left : -32, top : -32, right : 550, bottom : 36 },
-      { left : -132, top : -32, right : 450, bottom : 36 },
-      { left : -232, top : -32, right : 350, bottom : 36 }
+      { left : -880, top : -32, right : 540, bottom : 36 },
+      { left : -980, top : -32, right : 440, bottom : 36 },
+      { left : -1080, top : -32, right : 340, bottom : 36 }
     ]
   }
 
 
   componentDidMount(){
     console.log(this.refs["leftDiv"].getBoundingClientRect());
+    console.log(this.refs["rightDiv"].getBoundingClientRect());
     // this.setState({
     //   leftWidth : this.refs["leftDiv"].getBoundingClientRect().width + this.refs["leftDiv"].getBoundingClientRect().x
     // });
@@ -44,7 +45,7 @@ class App extends React.Component {
           <Draggable bounds={this.state.controlledLeftPosition[1]} onStop={() => this.handleStop(2)}><img ref={"img_2"} height="100" src={require("./img/panda.jpg")} /></Draggable>
           <Draggable bounds={this.state.controlledLeftPosition[2]} onStop={() => this.handleStop(3)}><img ref={"img_3"} height="100" src={require("./img/puppy.png")} /></Draggable>
         </div>
-        <div className="rightDiv">
+        <div className="rightDiv" ref={"rightDiv"}>
           <Draggable bounds={this.state.controlledRightPosition[0]}><img height="100" src={require("./img/gorilla.png")} /></Draggable>
           <Draggable bounds={this.state.controlledRightPosition[1]}><img height="100" src={require("./img/panda.jpg")} /></Draggable>
           <Draggable bounds={this.state.controlledRightPosition[2]}><img height="100" src={require("./img/puppy.png")} /></Draggable>
